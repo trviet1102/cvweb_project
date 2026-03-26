@@ -1,0 +1,151 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); 
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: #0f172a; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 25px;
+    max-width: 1400px; 
+    width: 95%;
+    height: auto;
+    max-height: 90vh; 
+    position: relative;
+    box-shadow: 0 0 50px rgba(34, 211, 238, 0.15);
+    overflow: hidden;
+}
+
+.modal-inner {
+    display: flex;
+    gap: 30px; 
+    align-items: flex-start; 
+}
+
+.modal-left {
+    flex: 7; 
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-main-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    outline: none;
+}
+
+.modal-info {
+    flex: 3; 
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    height: 100%;
+   
+    max-height: 75vh;
+    overflow-y: auto; 
+}
+
+.modal-info::-webkit-scrollbar {
+    width: 4px;
+}
+.modal-info::-webkit-scrollbar-thumb {
+    background: #22d3ee;
+    border-radius: 10px;
+}
+
+.modal-info h2 {
+    color: #fff;
+    font-size: 1.8rem;
+    margin: 10px 0;
+    font-weight: 700;
+}
+
+.modal-info p {
+    color: #cad9f5;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.modal-tag {
+    background: #22d3ee;
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.75rem;
+    width: fit-content;
+    margin-bottom: 10px;
+}
+
+.close-x {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 32px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.close-x:hover {
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+@media (max-width: 1024px) {
+    .modal-inner {
+        flex-direction: column; 
+    }
+    .modal-left, .modal-info {
+        flex: none;
+        width: 100%;
+    }
+    .modal-content {
+        height: 95vh;
+        overflow-y: auto;
+    }
+}
+
+.video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%; 
+    position: relative;
+    height: 0;
+    width: 100%;
+}
+
+.video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 8px;
+}
+
+.modal-left {
+    flex: 7;
+    background: #000;
+    display: flex;
+    align-items: center;
+}
